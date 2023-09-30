@@ -1,0 +1,52 @@
+<odoo>
+    <data>
+        <record id="view_company_dependent_data_tree" model="ir.ui.view">
+            <field name="name">company.dependent.data.tree</field>
+            <field name="model">company.dependent.data</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="product_id"/>
+                    <field name="company_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_company_dependent_data_form" model="ir.ui.view">
+            <field name="name">company.dependent.data.form</field>
+            <field name="model">company.dependent.data</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="product_id"/>
+                                <field name="company_id"/>
+                                <field name="product_status"/>
+                            </group>
+                            <group>
+                                <field name="product_status_2"/>
+                                <field name="company_id_2"/>
+                            </group>
+                            <group>
+                                <button name="get_product_status" string="Get Value" type="object"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_view_company_dependent_data" model="ir.actions.act_window">
+            <field name="name">Company Dependent Data</field>
+            <field name="res_model">company.dependent.data</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="rule_multi_company_demo_data" model="ir.rule">
+            <field name="name">Multi-Company Record Rule for Demo Data</field>
+            <field name="model_id" ref="multi_company_demo.model_company_dependent_data"/>
+            <field name="domain_force">['|', ('company_id','=',False), ('company_id','in',company_ids)]</field>
+        </record>
+
+    </data>
+</odoo>

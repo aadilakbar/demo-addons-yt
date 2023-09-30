@@ -1,0 +1,20 @@
+<odoo>
+    <data>
+
+        <menuitem
+                id="menu_demo_module"
+                name="Company Dependent"
+                sequence="70"
+                web_icon="multi_company_demo,static/description/icon.png"
+                groups="base.group_user"/>
+
+        <menuitem
+                id="menu_company_dependent_data"
+                parent="multi_company_demo.menu_demo_module"
+                name="Company Dependent Data"
+                sequence="1"
+                action="multi_company_demo.action_view_company_dependent_data"
+                groups="base.group_user"/>
+
+    </data>
+</odoo>
