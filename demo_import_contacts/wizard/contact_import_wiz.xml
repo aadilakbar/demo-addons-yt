@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_contact_import_wiz_form" model="ir.ui.view">
+            <field name="name">contact.import.wiz.form</field>
+            <field name="model">contact.import.wiz</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="filename" invisible="1"/>
+                            <field name="import_file" widget="binary" filename="filename" string="File"/>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="button_import_xlsx_contacts" string="Import" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
