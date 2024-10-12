@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="odoo_owl_list.ListView.Buttons" t-inherit="web.ListView.Buttons" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('o_list_buttons')]" position="inside">
+            <button t-if="props.resModel == 'sale.order'" class="o_btn_hello btn btn-primary" data-hotkey="r" t-on-click="showCustomers">
+                Customers
+            </button>
+        </xpath>
+    </t>
+</templates>
