@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="OwlDemoControlPanel" t-inherit="web.ControlPanel" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('o_control_panel_collapsed_create')]" position="before">
+            <t t-slot="control-panel-reload-button"/>
+        </xpath>
+    </t>
+    <t t-name="odoo_owl_form.FormView" t-inherit="web.FormView" t-inherit-mode="extension">
+        <xpath expr="//Layout" position="inside">
+            <t t-set-slot="control-panel-reload-button">
+                <button class="btn opacity-trigger-hover" type="button" t-on-click="owlReloadCurrentForm" title="Reload">
+                    Reload
+                </button>
+            </t>
+        </xpath>
+    </t>
+</templates>

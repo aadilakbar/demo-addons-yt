@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_odoo_owl_demo_tree" model="ir.ui.view">
+            <field name="name">odoo.owl.demo.tree</field>
+            <field name="model">odoo.owl.demo</field>
+            <field name="arch" type="xml">
+                <tree string="Owl JS Demo tree">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_odoo_owl_demo_form" model="ir.ui.view">
+            <field name="name">odoo.owl.demo.form</field>
+            <field name="model">odoo.owl.demo</field>
+            <field name="arch" type="xml">
+                <form string="Owl JS Demo form">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" required="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_odoo_owl_demo" model="ir.actions.act_window">
+            <field name="name">Owl JS Demos</field>
+            <field name="res_model">odoo.owl.demo</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem
+                id="odoo_owl_demo_menu_root"
+                name="Odoo OWL"
+                action="action_odoo_owl_demo"
+                sequence="1"/>
+
+    </data>
+</odoo>
