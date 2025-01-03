@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="odoo_owl_kanban.KanbanView" t-inherit="web.KanbanView" t-inherit-mode="extension">
+        <xpath expr="//button[contains(@class, 'o-kanban-button-new')]" position="after">
+            <t t-if="props.resModel === 'crm.lead'">
+                <button type="button" class="btn btn-primary o-kanban-button-test" accesskey="c" t-on-click="() => this.markOpportunitiesAsWon()" data-bounce-button="">
+                    Mark Opportunities As Won
+                </button>
+            </t>
+        </xpath>
+    </t>
+</templates>

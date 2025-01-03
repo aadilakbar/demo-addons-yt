@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_crm_lead_confrm_wiz_form" model="ir.ui.view">
+            <field name="name">crm.lead.confirm.wiz.form</field>
+            <field name="model">crm.lead.confirm.wiz</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="lead_ids" widget="many2many_tags" options="{'no_create': 1}"/>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="button_confirm" string="Mark As Won" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
