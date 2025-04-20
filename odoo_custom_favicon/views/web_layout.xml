@@ -1,0 +1,9 @@
+<odoo>
+    <data>
+        <template id="custom_favicon_web_layout" inherit_id="web.layout">
+            <xpath expr="//link[@rel='shortcut icon']" position="before">
+                <t t-set="x_icon" t-value="'/web/static/img/app_favicon.ico'"/>
+            </xpath>
+        </template>
+    </data>
+</odoo>
